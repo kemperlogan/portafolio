@@ -1,48 +1,70 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Mi Portafolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Portafolio – Kemper Martínez</title>
+
+  <!-- tipografía y reset rápido -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
   <style>
-    body{font-family:sans-serif;background:#f4f4f4;margin:0}
-    header,footer{background:#222;color:#fff;text-align:center;padding:20px}
-    .grid{display:grid;gap:20px;padding:20px;
-          grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-    .card{background:#fff;padding:15px;border-radius:8px;
-          box-shadow:0 2px 6px rgba(0,0,0,.1)}
-    .card img{width:100%;border-radius:6px}
-    .card h3{margin:10px 0 5px}
-    .card p {margin-bottom:10px}
-    .card a{color:#0077cc;text-decoration:none;font-weight:bold}
+    :root{
+      --primary:#0056b3;
+      --bg:#f5f7fa;
+      --card-bg:#fff;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:"Poppins",sans-serif;background:var(--bg);color:#222;line-height:1.5}
+    header{background:var(--primary);color:#fff;text-align:center;padding:40px 15px}
+    header h1{font-size:2.2rem;font-weight:600}
+    header p{font-size:1rem;margin-top:8px}
+    .grid{display:grid;gap:25px;padding:40px 20px;max-width:1100px;margin:auto;
+          grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
+    .card{background:var(--card-bg);border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.05);
+          padding:25px;text-align:center;display:flex;flex-direction:column}
+    .card h3{font-size:1.3rem;margin-bottom:6px}
+    .card p{font-size:.9rem;margin-bottom:14px;color:#555}
+    .card a{margin-top:auto;background:var(--primary);color:#fff;
+            padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:600}
+    footer{text-align:center;font-size:.8rem;padding:20px;color:#666}
+    @media(max-width:480px){header h1{font-size:1.8rem}}
   </style>
 </head>
 <body>
-  <header><h1>Mi Portafolio</h1><p>Proyectos destacados</p></header>
+  <header>
+    <h1>Kemper Martínez</h1>
+    <p>Est. Ing. Sistemas | WordPress • PHP • Go • PyQt</p>
+  </header>
 
   <main class="grid">
+    <!-- Tarjeta Proyecto 1 -->
     <article class="card">
-      <img src="proyecto-1/preview.png" alt="Proyecto 1">
-      <h3>Proyecto 1</h3>
-      <p>Descripción breve del proyecto 1.</p>
-      <a href="proyecto-1/">Ver código / demo</a>
+      <h3>Sistema de Inventario</h3>
+      <p>Aplicación MVC en PHP + MySQL para gestionar productos y stock.</p>
+      <a href="https://github.com/kemperlogan/portafolio/tree/main/proyecto-1" target="_blank">
+        Ver código en GitHub
+      </a>
     </article>
 
+    <!-- Tarjeta Proyecto 2 -->
     <article class="card">
-      <img src="proyecto-2/preview.png" alt="Proyecto 2">
-      <h3>Proyecto 2</h3>
-      <p>Descripción breve del proyecto 2.</p>
-      <a href="proyecto-2/">Ver código / demo</a>
+      <h3>Portal Registro / Login</h3>
+      <p>Registro de usuarios, hash de contraseñas y validación en PHP.</p>
+      <a href="https://github.com/kemperlogan/portafolio/tree/main/proyecto-2" target="_blank">
+        Ver código en GitHub
+      </a>
     </article>
 
+    <!-- Tarjeta Proyecto 3 -->
     <article class="card">
-      <img src="proyecto-3/preview.png" alt="Proyecto 3">
-      <h3>Proyecto 3</h3>
-      <p>Descripción breve del proyecto 3.</p>
-      <a href="proyecto-3/">Ver código / demo</a>
+      <h3>API REST de Productos</h3>
+      <p>Servicio RESTful en Go (Gin) para CRUD de productos.</p>
+      <a href="https://github.com/kemperlogan/portafolio/tree/main/proyecto-3" target="_blank">
+        Ver código en GitHub
+      </a>
     </article>
   </main>
 
-  <footer>&copy; 2025 Tu Nombre</footer>
+  <footer>&copy; 2025 Kemper Martínez</footer>
 </body>
 </html>
