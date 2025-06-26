@@ -2,69 +2,128 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Portafolio – Kemper Martínez</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Kemper Martínez • Portafolio</title>
 
-  <!-- tipografía y reset rápido -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet" />
+  <!--  Google Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-yNf0j…" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
   <style>
-    :root{
-      --primary:#0056b3;
-      --bg:#f5f7fa;
-      --card-bg:#fff;
-    }
-    *{box-sizing:border-box;margin:0;padding:0}
-    body{font-family:"Poppins",sans-serif;background:var(--bg);color:#222;line-height:1.5}
-    header{background:var(--primary);color:#fff;text-align:center;padding:40px 15px}
-    header h1{font-size:2.2rem;font-weight:600}
-    header p{font-size:1rem;margin-top:8px}
-    .grid{display:grid;gap:25px;padding:40px 20px;max-width:1100px;margin:auto;
-          grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-    .card{background:var(--card-bg);border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,.05);
-          padding:25px;text-align:center;display:flex;flex-direction:column}
-    .card h3{font-size:1.3rem;margin-bottom:6px}
-    .card p{font-size:.9rem;margin-bottom:14px;color:#555}
-    .card a{margin-top:auto;background:var(--primary);color:#fff;
-            padding:10px 18px;border-radius:6px;text-decoration:none;font-weight:600}
-    footer{text-align:center;font-size:.8rem;padding:20px;color:#666}
-    @media(max-width:480px){header h1{font-size:1.8rem}}
+  :root{
+    --clr-bg:#f5f7ff;
+    --clr-primary:#0066ff;
+    --clr-primary-light:#6ea8ff;
+    --clr-card:#ffffff;
+    --clr-text:#1e1e1e;
+    --radius:14px;
+    --speed:.25s;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:"Poppins",sans-serif;
+    background:var(--clr-bg);
+    color:var(--clr-text);
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:linear-gradient(135deg,var(--clr-primary) 0%,var(--clr-primary-light) 100%);
+    color:#fff;
+    text-align:center;
+    padding:4rem 1rem 5rem;
+    clip-path:ellipse(120% 100% at 50% 0);   /* forma curva inferior */
+  }
+  .hero h1{font-size:clamp(2rem,5vw,3rem);font-weight:700;margin-bottom:.5rem}
+  .hero p{font-size:1.1rem;font-weight:300;max-width:550px;margin:0 auto}
+
+  /* ---------- GRID ---------- */
+  .grid{
+    display:grid;
+    gap:2rem;
+    padding:0 1.2rem;
+    max-width:1100px;
+    margin:-3.5rem auto 3rem; /* superpone las cards sobre el hero */
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  }
+
+  /* ---------- CARD ---------- */
+  .card{
+    background:var(--clr-card);
+    border-radius:var(--radius);
+    box-shadow:0 12px 35px rgba(0,0,0,.05);
+    padding:2rem 1.6rem 1.8rem;
+    display:flex;flex-direction:column;gap:1rem;
+    transition:transform var(--speed),box-shadow var(--speed);
+  }
+  .card:hover{transform:translateY(-6px);box-shadow:0 15px 40px rgba(0,0,0,.1)}
+
+  .card .icon{
+    font-size:2.1rem;color:var(--clr-primary);
+  }
+  .card h3{font-size:1.3rem;font-weight:600}
+  .card p{font-size:.9rem;line-height:1.5;color:#444}
+  .card a{
+    margin-top:auto;
+    align-self:flex-start;
+    background:var(--clr-primary);
+    color:#fff;
+    text-decoration:none;
+    padding:.55rem 1.3rem;
+    border-radius:8px;
+    font-size:.9rem;
+    font-weight:500;
+    transition:background var(--speed);
+  }
+  .card a:hover{background:#004bd1}
+  footer{
+    text-align:center;font-size:.8rem;padding:2rem 0 3rem;color:#666
+  }
   </style>
 </head>
 <body>
-  <header>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
     <h1>Kemper Martínez</h1>
-    <p>Est. Ing. Sistemas | WordPress • PHP • Go • PyQt</p>
-  </header>
+    <p>Est. Ing. de Sistemas • WordPress / Divi • PHP • Go • PyQt • Git&nbsp;& GitHub</p>
+  </section>
 
+  <!-- ===== PROJECTS GRID ===== -->
   <main class="grid">
-    <!-- Tarjeta Proyecto 1 -->
+
+    <!-- Inventario PHP -->
     <article class="card">
+      <span class="icon"><i class="fas fa-warehouse"></i></span>
       <h3>Sistema de Inventario</h3>
-      <p>Aplicación MVC en PHP + MySQL para gestionar productos y stock.</p>
+      <p>Aplicación MVC en PHP + MySQL para gestionar productos, categorías y stock con sesiones y validación.</p>
       <a href="https://github.com/kemperlogan/portafolio/tree/main/proyecto-1" target="_blank">
-        Ver código en GitHub
+        <i class="fas fa-code"></i>&nbsp; Código
       </a>
     </article>
 
-    <!-- Tarjeta Proyecto 2 -->
+    <!-- Registro / Login -->
     <article class="card">
+      <span class="icon"><i class="fas fa-user-lock"></i></span>
       <h3>Portal Registro / Login</h3>
-      <p>Registro de usuarios, hash de contraseñas y validación en PHP.</p>
+      <p>Alto de usuarios, hash de contraseñas y página privada. Proyecto PHP puro con buenas prácticas de seguridad.</p>
       <a href="https://github.com/kemperlogan/portafolio/tree/main/proyecto-2" target="_blank">
-        Ver código en GitHub
+        <i class="fas fa-code"></i>&nbsp; Código
       </a>
     </article>
 
-    <!-- Tarjeta Proyecto 3 -->
+    <!-- API Go -->
     <article class="card">
+      <span class="icon"><i class="fas fa-server"></i></span>
       <h3>API REST de Productos</h3>
-      <p>Servicio RESTful en Go (Gin) para CRUD de productos.</p>
+      <p>Backend escrito en Go (Gin). CRUD completo, JSON, rutas RESTful y conexión a base de datos PostgreSQL.</p>
       <a href="https://github.com/kemperlogan/portafolio/tree/main/proyecto-3" target="_blank">
-        Ver código en GitHub
+        <i class="fas fa-code"></i>&nbsp; Código
       </a>
     </article>
+
   </main>
 
-  <footer>&copy; 2025 Kemper Martínez</footer>
+  <footer>&copy; 2025 Kemper Martínez – Portafolio</footer>
 </body>
 </html>
